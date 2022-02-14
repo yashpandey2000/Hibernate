@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+      
+        <property name="show_sql">true</property>
+        
+        
+          <!-- <property name="hbm2ddl.auto">create</property> -->  <!-- this is used to drop and recreate table data -->
+        
+         <property name="hbm2ddl.auto">update</property>    <!-- this is used to compile all curd operation -->
+        
+        
+       <!--  <property name="hibernate.cache.use_second_level_cache">true</property>
+        
+        <property name="hibernate.cache.provider_class">in.co.rays.dto.EhCacheProvider</property> -->
+        
+          <mapping resource="in/co/rays/dto/User.hbm.xml"/> 
+        
+         <!--<mapping resource="in/co/rays/dto/Bids.hbm.xml"/>
+        
+       <mapping resource="in/co/rays/dto/AuctionItem.hbm.xml"/> -->
+        
+      <!--   <mapping resource="in/co/rays/dto/Payment.hbm.xml"/>
+         -->
+         
+         <mapping resource="in/co/rays/dto/Address.hbm.xml"/>
+         <mapping resource="in/co/rays/dto/Employee.hbm.xml"/>
+         
+        <!--  <mapping resource="in/co/rays/dto/College.hbm.xml"/> -->
+      
+        
+    </session-factory>
+</hibernate-configuration>

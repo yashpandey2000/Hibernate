@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 Jul, 2021 2:40:54 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.dto.Payment" table="PAYMENT">
+        <id name="id" type="int">
+            <column name="payment_id" />
+            <generator class="assigned" />
+        </id>
+        
+       <discriminator column="payment_type" type="string"></discriminator>
+        
+        <property name="amount" type="int">
+            <column name="AMOUNT" />
+        </property>
+        
+        
+        <subclass name="in.co.rays.dto.Credit" discriminator-value="Credit">
+        <join table="Credit">
+        <key column="payment_id"></key>
+        <property name="cctype" column="cc_type"></property>
+        </join>
+        </subclass>
+        
+        
+        <subclass name="in.co.rays.dto.Cheque" discriminator-value="Cheque">
+        <join table="Cheque">
+        <key column="payment_id"></key>
+        <property name="checkno" column="check_no"></property>
+        </join>      
+        </subclass> 
+        
+        
+        
+        
+        
+        <!-- <subclass name="in.co.rays.dto.Credit" discriminator-value="Credit">
+        <property name="cctype" column="cc_type"></property>
+        </subclass> -->
+        
+        
+        <!-- <subclass name="in.co.rays.dto.Cheque" discriminator-value="Cheque">
+        <property name="checkno" column="check_no"></property>
+        </subclass> -->
+        
+        
+    </class>
+</hibernate-mapping>

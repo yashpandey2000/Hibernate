@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 Jul, 2021 10:26:54 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.dto.College" table="ST_COLLEGE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="college_name" type="java.lang.String">
+            <column name="COLLEGE_NAME" />
+        </property>
+        <property name="college_address" type="java.lang.String">
+            <column name="COLLEGE_ADDRESS" />
+        </property>
+        <property name="college_id" type="int" >
+            <column name="COLLEGE_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

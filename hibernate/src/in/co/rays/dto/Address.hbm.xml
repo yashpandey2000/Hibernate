@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 Jul, 2021 2:32:05 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.dto.Address" table="ADDRESS">
+        <id name="id" type="int">
+            <column name="ID" />
+              <generator class="foreign">
+            <param name="property">empadd</param>
+            
+            </generator>
+        </id>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="state" type="java.lang.String" cascade="all">
+            <column name="STATE" />
+        </property>
+         <!--   <one-to-one name="Employee"  >
+   
+        </one-to-one> -->
+    </class>
+</hibernate-mapping>
